@@ -40,12 +40,20 @@ app.Use(async (ctx, next) =>
     }
 });
 
-app.UseCors(options =>
+/*app.UseCors(options =>
    options.WithOrigins("http:\\localhost:4200")
         .AllowAnyOrigin()
         .AllowAnyMethod()
         .AllowAnyHeader());
+*/
 
+app.UseCors(builder =>
+   builder
+     .AllowAnyOrigin()
+     .AllowAnyHeader()
+     .AllowAnyMethod()
+    
+ );
 
 app.UseHttpsRedirection();
 

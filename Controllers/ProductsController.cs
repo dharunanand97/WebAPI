@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebAPI2;
 using WebAPI2.Data;
+using System.Data.SqlClient;
+using Newtonsoft.Json;
 
 namespace WebAPI2.Controllers
 {
@@ -76,7 +78,7 @@ namespace WebAPI2.Controllers
 
         // POST: api/Products
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
+        [HttpPost]  
         public async Task<ActionResult<Product>> PostProduct(Product product)
         {
             _context.Products.Add(product);

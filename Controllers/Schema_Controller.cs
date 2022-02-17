@@ -43,8 +43,8 @@ namespace WebAPI2.Controllers
                     //execute the SQLCommand
                     SqlDataReader dr = cmd.ExecuteReader();
 
-                    Console.WriteLine(Environment.NewLine + "Retrieving data from database..." + Environment.NewLine);
-                    Console.WriteLine("Retrieved records:");
+                    Console.WriteLine(Environment.NewLine + "Schema Controller" + Environment.NewLine);
+                    Console.WriteLine("Get Schema");
                     var obj1 = new List<Schema>{ };
                     
                     List<string> list = new List<string>();
@@ -64,6 +64,7 @@ namespace WebAPI2.Controllers
                         conn.Close();
                         string jsonData = JsonConvert.SerializeObject(obj1);
                         String[] str = list.ToArray();
+                        
                         return str;
                     }
                     else
@@ -111,8 +112,8 @@ namespace WebAPI2.Controllers
                     //execute the SQLCommand
                     SqlDataReader dr = cmd.ExecuteReader();
 
-                    Console.WriteLine(Environment.NewLine + "Retrieving data from database..." + Environment.NewLine);
-                    Console.WriteLine("Retrieved records:");
+                    Console.WriteLine(Environment.NewLine + "Schema Controller" + Environment.NewLine);
+                    Console.WriteLine("Get tables");
                     var obj1 = new List<Schema> { };
 
                     List<string> list = new List<string>();
@@ -160,6 +161,7 @@ namespace WebAPI2.Controllers
         [HttpPost]
         public void Post([FromBody] string value)
         {
+
         }
 
         // PUT api/<Schema_Controller>/5
